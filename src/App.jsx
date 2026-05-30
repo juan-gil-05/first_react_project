@@ -1,8 +1,9 @@
 /* eslint-disable react-hooks/set-state-in-effect */
 /* eslint-disable no-empty */
 /* eslint-disable no-unused-vars */
-import Search from "./components/search.jsx";
+import Search from "./components/Search.jsx";
 import { useState, useEffect } from "react";
+import Spinner from "./components/Spinner.jsx";
 
 const API_BASE_URL = "https://api.themoviedb.org/3"
 
@@ -69,9 +70,9 @@ function App() {
         </header>
 
         <section className="all-movies">
-          <h2>All Movies</h2>
-          {isLoading ? (
-            <p className="text-white">Loading ...</p>)
+          <h2 className="mt-7">All Movies</h2>
+          {isLoading ? ( 
+            <Spinner/>)
             : errorMessage ? (<p className="text-red-500"> {errorMessage} </p>)
               : (
                 <ul>

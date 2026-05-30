@@ -1,13 +1,22 @@
-import './App.css'
-import MovieCard from './components/movieCard'
+import Search from "./components/search.jsx" ;
+import { useState } from "react";
+
 
 function App() {
+  const [searchTerm, setSearchTerm] = useState("")
 
   return (
-    <>
-    <MovieCard movie={{title : "juan", release_date : "2024"}}></MovieCard>
-    </>
-  )
+    <main>
+      <div className="pattern"></div>
+      <div className="wrapper">
+        <header>
+          <img src="./hero.png" alt="Hero Banner" />
+          <h1>Find <span className="text-gradient">Movies</span> You'll Enjoy Without The Hassle</h1>
+          <Search searchTerm= {searchTerm} setSearchTerm = {setSearchTerm} ></Search>
+        </header>
+      </div>
+    </main>
+  );
 }
 
-export default App
+export default App;
